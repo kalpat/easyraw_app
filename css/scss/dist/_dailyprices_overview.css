@@ -1,0 +1,194 @@
+#dailyprices_headline {
+  width: 100%;
+  border-bottom: 1px solid #747474;
+  min-height: 45px;
+}
+
+#dailyprices_header {
+  float: left;
+  margin: 0 10px;
+}
+
+#dailyprices_header #dp_header {
+  text-align: justify;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #333333;
+  line-height: 1px;
+  font-size: 1.1em;
+}
+
+#dailyprices_overview_menu {
+  width: 100px;
+  float: right;
+  display: block;
+  padding: 10px;
+}
+
+#div_period_dailyprices, #div_add_dailyprices {
+  width: 35%;
+  display: block;
+  height: 25px;
+  padding: 0;
+  margin-top: 0px;
+  margin-right: 5px;
+  float: right;
+}
+
+#div_period_dailyprices .glyphicon, #div_add_dailyprices .glyphicon {
+  width: 99%;
+  color: #212121;
+  font-size: 25px;
+  text-align: center;
+}
+
+#dailyprices_overview {
+  max-width: 800px;
+  width: 60%;
+  margin: 55px auto 0 auto;
+  padding: 0 10px;
+  height: 95%;
+}
+
+#dailyprices_content {
+  max-width: 800px;
+  width: 100%;
+  height: 90%;
+}
+
+#dailyprices_content #div_dailyprices_form {
+  height: 100%;
+}
+
+#dailyprices_content #div_dailyprices_form #dailyprices_form {
+  float: left;
+  height: 85%;
+}
+
+#dailyprices_content #div_dailyprices_form #div_save_button {
+  float: left;
+  text-align: right;
+  padding: 10px;
+  width: 98%;
+}
+
+#dailyprices_inputs {
+  float: left;
+  height: 90%;
+}
+
+#dailyprices_inputs .form-group {
+  width: 47%;
+  float: left;
+  padding: 5px;
+  margin-bottom: 0;
+}
+
+#dailyprices_inputs .form-group input {
+  text-align: right;
+}
+
+@media (min-width: 768px) {
+  #dailyprices_overview {
+    max-width: 800px;
+    width: 60%;
+    padding: 0 10px;
+    height: 95%;
+  }
+  #dailyprices_content {
+    max-width: 800px;
+    width: 100%;
+    height: 90%;
+  }
+  #dailyprices_content #div_dailyprices_form {
+    height: 100%;
+  }
+  #dailyprices_content #div_dailyprices_form #div_save_button {
+    float: left;
+    text-align: right;
+    padding: 10px;
+    width: 98%;
+  }
+  #dailyprices_inputs {
+    float: left;
+    height: 90%;
+  }
+  #dailyprices_inputs .form-group {
+    width: 47%;
+    float: left;
+    padding: 5px;
+    margin-bottom: 0;
+  }
+  #dailyprices_inputs .form-group input {
+    text-align: right;
+  }
+}
+
+@media (max-width: 451px) and (max-width: 768px) {
+  #dailyprices_overview {
+    width: 100%;
+    padding: 0 10px;
+    height: 95%;
+  }
+  #dailyprices_content {
+    max-width: 800px;
+    width: 100%;
+    height: 85%;
+  }
+  #dailyprices_content #div_dailyprices_form {
+    height: 100%;
+  }
+  #dailyprices_content #div_dailyprices_form #div_save_button {
+    float: left;
+    text-align: right;
+    padding: 10px;
+    width: 98%;
+  }
+  #dailyprices_inputs {
+    float: left;
+    height: 90%;
+  }
+  #dailyprices_inputs .form-group {
+    width: 99%;
+    float: left;
+    padding: 5px;
+    margin-bottom: 0;
+  }
+  #dailyprices_inputs .form-group input {
+    text-align: right;
+  }
+}
+
+@media (max-width: 450px) {
+  #dailyprices_overview {
+    width: 100%;
+    padding: 0 10px;
+    height: 95%;
+  }
+  #dailyprices_content {
+    max-width: 800px;
+    width: 100%;
+    height: 85%;
+  }
+  #dailyprices_content #div_dailyprices_form {
+    height: 100%;
+  }
+  #dailyprices_content #div_dailyprices_form #div_save_button {
+    float: left;
+    text-align: right;
+    padding: 10px;
+    width: 98%;
+  }
+  #dailyprices_inputs {
+    float: left;
+    height: 90%;
+  }
+  #dailyprices_inputs .form-group {
+    width: 99%;
+    float: left;
+    padding: 5px;
+    margin-bottom: 0;
+  }
+  #dailyprices_inputs .form-group input {
+    text-align: right;
+  }
+}

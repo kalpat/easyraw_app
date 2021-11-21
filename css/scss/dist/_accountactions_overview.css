@@ -1,0 +1,156 @@
+#accountsactions_headline {
+  width: 100%;
+  border-bottom: 1px solid #747474;
+  min-height: 45px;
+  float: left;
+}
+
+#accountsactions_header {
+  float: left;
+  width: 69%;
+}
+
+#accountsactions_header #aa_header {
+  text-align: justify;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #333333;
+  line-height: 1px;
+  font-size: 1.1em;
+}
+
+.accountactionstatus_complete {
+  color: #08b82e;
+}
+
+.accountactionstatus_incomplete {
+  color: #ffd61e;
+}
+
+#accountsactions_overview_menu {
+  width: 80px;
+  float: right;
+  display: block;
+  padding: 10px;
+}
+
+#accountsactions_overview_menu #div_period_accoutnactions, #accountsactions_overview_menu #div_add_accoutnactions {
+  width: 50%;
+  float: right;
+  cursor: pointer;
+}
+
+#accountsactions_overview_menu .glyphicon {
+  width: 99%;
+  color: #212121;
+  font-size: 25px;
+  text-align: center;
+  display: block;
+  height: 25px;
+  padding: 0;
+  margin-top: 0px;
+  margin-right: 10px;
+}
+
+#accountsactions_overview {
+  max-width: 800px;
+  width: 60%;
+  margin: 55px auto;
+  padding: 0 10px;
+  height: 100%;
+}
+
+.aa_actions_headline {
+  max-width: 70%;
+  float: left;
+  padding: 10px;
+}
+
+.accountaction_config {
+  width: 45px;
+  float: right;
+  display: block;
+  text-align: center;
+}
+
+.accountaction_config .glyphicon {
+  width: 99%;
+  color: #212121;
+  font-size: 20px;
+  display: block;
+  border: none;
+  background: none;
+  text-align: right;
+  padding: 5px;
+}
+
+.th_actionbooking {
+  text-align: right;
+}
+
+.accountaction_menu {
+  width: 10%;
+  float: right;
+}
+
+#accountsactions_content {
+  margin-bottom: 30px;
+  float: left;
+  width: 100%;
+}
+
+#accountsactions_content .panel {
+  float: left;
+  width: 100%;
+}
+
+#accountsactions_content .panel-heading {
+  padding: 0;
+  float: left;
+  width: 100%;
+}
+
+#accountsactions_content .panel-body {
+  padding: 15px;
+  float: left;
+  width: 100%;
+}
+
+#accountsactions_content .control-label {
+  padding: 5px;
+}
+
+#accountsactions_content .input-group {
+  display: table;
+  border-collapse: separate;
+  width: 95%;
+  padding: 0 10px;
+}
+
+#L_cb_completeaction {
+  width: 200px;
+}
+
+@media (min-width: 768px) {
+  #accountsactions_overview {
+    max-width: 800px;
+    width: 60%;
+    padding: 0 10px;
+    height: 100%;
+  }
+}
+
+@media (max-width: 451px) and (max-width: 768px) {
+  #accountsactions_overview {
+    width: 100%;
+    padding: 0 10px;
+    height: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  #accountsactions_overview {
+    width: 100%;
+    padding: 0 10px;
+    height: 100%;
+  }
+}

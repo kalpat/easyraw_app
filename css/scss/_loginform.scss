@@ -1,0 +1,90 @@
+#registration_success{
+    font-family: arial;
+    font-size: 0.9em;
+    color: white;
+}
+
+#login_button, #registerform_button{
+    margin: 3px;
+    font-size: 0.9em;
+}
+
+.input-field > label {
+    color: #9e9e9e;
+    position: initial; 
+    top: 0;
+    left: 0;
+    font-size: 1rem;
+    cursor: text;
+    -webkit-transition: color .2s ease-out, -webkit-transform .2s ease-out;
+    transition: color .2s ease-out, -webkit-transform .2s ease-out;
+    transition: transform .2s ease-out, color .2s ease-out;
+    transition: transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out;
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    text-align: initial;
+    -webkit-transform: translateY(12px);
+    transform: translateY(12px);
+}
+
+#password_div{
+#configuration_form_header{
+    margin: 5px 0;
+}
+    .card-content{
+        height: 430px;
+    }
+}
+
+#currency_div{
+    #L_currency_icon{
+        margin: 5px 0;
+    }
+    .card-content{
+        height: 200px;
+    }
+}
+
+#lang_div {
+    .card-content{
+        height: 110px;
+    }
+}
+
+#wrong_emailadress{
+padding: 5px 0;
+}
+
+#password_msg{
+.progress{
+    margin: 2px 0;
+}
+}
+
+@media (min-width:768px) {
+
+#easyraw_loginform_div, #easyraw_registerform_div, #config_form {
+        max-width: 500px;
+        width: 40%;
+        margin: 5% auto;
+    }
+}
+
+@media (min-width:451px) and (max-width:768px){
+
+    #easyraw_loginform_div, #easyraw_registerform_div, #config_form  {
+            margin-top: 10%;
+            
+        }
+    }
+    
+    @media (max-width:450px){
+
+        #easyraw_loginform_div, #easyraw_registerform_div, #config_form  {
+            margin-top: 15%;
+             
+            }
+        }
+    
+
+

@@ -1,0 +1,72 @@
+//SiteLayout
+#site_complete{
+	width: 100%;
+	
+}
+
+		#headline{
+			padding: 10px 10px;
+			margin: 0;
+			display: flow-root;
+			height: 60px;
+			max-height: 50px;
+			width: 100%;
+			top: 0;
+			z-index: 990;
+			position: fixed
+		}
+			
+		#App_Content {
+			width: 100%;
+			float: left;
+			margin-bottom: 70px;
+		}
+	
+		#App_Menu_complete{
+			float: right;
+		
+		}
+	
+		#App_Config, #App_User, #App_Stats{
+			float: right;
+			padding: 0 5px;
+			margin: 0 5px;
+			cursor: pointer;
+	
+			.material-icons{
+				width: 99%;
+				color: white;
+				font-size: 30px;				}
+	
+		}
+	
+		#System_Content{
+			width:99%;
+			float: left;
+			padding-bottom: 70px;
+		}
+
+	.dropdown-menu > li > a {
+		font-size: 1.2em;
+	}
+
+	//Desktop Standard zu Media-Queries		
+		#Logo{
+			float: left;
+			width: 55%;
+			height: 35px;
+			p{
+				color: rgb(255, 255, 255);
+				font-size: 1.3em;
+				font-family: Arial, Helvetica, sans-serif;
+				margin: 4px;
+			}
+	
+		}
+
+		#currency_symbol{
+			width: 150px;
+		}
+	
+
+

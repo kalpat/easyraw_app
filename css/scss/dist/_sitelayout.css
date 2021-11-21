@@ -1,0 +1,67 @@
+#site_complete {
+  width: 100%;
+}
+
+#headline {
+  padding: 10px 10px;
+  margin: 0;
+  background: #212121;
+  display: flow-root;
+  height: 60px;
+  max-height: 50px;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  z-index: 990;
+}
+
+#App_Content {
+  width: 100%;
+  float: left;
+  margin-bottom: 70px;
+}
+
+#App_Menu_complete {
+  float: right;
+}
+
+#App_Config, #App_User, #App_Stats {
+  float: right;
+  padding: 0 5px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+#App_Config .glyphicon, #App_User .glyphicon, #App_Stats .glyphicon {
+  width: 99%;
+  color: white;
+  font-size: 30px;
+}
+
+#System_Content {
+  width: 99%;
+  float: left;
+}
+
+.dropdown-menu > li > a {
+  font-size: 1.2em;
+}
+
+#Logo {
+  float: left;
+  width: 55%;
+}
+
+#Logo p {
+  color: #f8b12c;
+  font-size: 1.3em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#App_Config .glyphicon {
+  font-size: 30px;
+}
+
+#currency_symbol {
+  width: 150px;
+}
