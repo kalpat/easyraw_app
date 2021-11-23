@@ -1,0 +1,20 @@
+<footer>
+<div id="easyraw_navbar" data-role="footer" data-position="fixed">
+  <div id="navbar_conto">
+    <i class="material-icons" id="accounts_glyphicon">account_balance_wallet</i>
+    <span class="menu-label" id="menu_accounts">Konten</span>
+  </div>
+  <div id="navbar_customersconto">
+    <i class="material-icons" id="customers_accounts_glyphicon">assignment_ind</i>
+    <span class="menu-label" id="menu_customersaccounts">Kundenkonten</span>
+  </div>
+  <div id="navbar_dailyprices">
+    <i class="material-icons" id="dailyprices_glyphicon">attach_money</i>
+    <span class="menu-label" id="menu_dailyprices">Tagespreise</span>
+  </div>
+<div id="navbar_material">
+  <i class="material-icons" id="materials_glyphicon" aria-hidden="true">crop_7_5</i>
+  <span class="menu-label" id="menu_materials">Materialien</span>
+</div>
+</div>
+</footer>
