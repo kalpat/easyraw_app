@@ -7,4 +7,12 @@
   //Sprache aus localStorage landen
   var lang = localStorage.getItem("lang");
 
-import  'login/boot_easyraw.js';
+  $(document).ready(function(){
+      
+$.getScript("./js/login/boot_easyraw.js");
+
+  });
+
+
+
+

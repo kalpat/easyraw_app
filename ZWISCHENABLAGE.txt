@@ -1,3 +1,4 @@
+**************** HEADER NAVIGATION  ******************************************
 <footer>
 <div id="easyraw_navbar" data-role="footer" data-position="fixed">
   <div id="navbar_conto">
@@ -18,3 +19,16 @@
 </div>
 </div>
 </footer>
+
+
+
+**************** HEADER NAVIGATION  ******************************************
+  <div id="App_User">
+    <a><i class="material-icons z-depth-1">people</i></a>
+  </div>
+  <div id="App_Config">
+    <a><i class="material-icons z-depth-1">settings</i></a>
+  </div>
+  <div id="App_Stats">
+    <a><i class="material-icons z-depth-1">insert_chart</i></a>
+  </div>
