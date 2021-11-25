@@ -1,0 +1,36 @@
+
+ @media (min-width:768px) {
+#loginform_body{
+    margin: 5% auto 0 25%;
+
+    .card{
+        margin: 5%;
+    }
+}
+ 
+}
+
+@media (max-width:768px){
+
+    #loginform_body{
+        margin: 5% auto 0 10%;
+    
+        .card{
+            margin: 3%;
+        }
+    }
+
+}
+
+
+@media (max-width: 450px){
+
+    #loginform_body{
+        margin: 5% auto 0 2%;
+    
+        .card{
+            margin: 1%;
+        }
+    }
+
+}
