@@ -1,0 +1,13 @@
+{
+    "loginFormLabel": "Login",
+    "usermail": "Mail",
+    "password": "Password",
+    "login_button": "Login",
+    "registerform_button": "Create Account",
+    "registration_success": "Account created successfully",
+    "lang_header": "Language",
+    "lang_select": "Select Language!",
+     "lang_dropdown": "<span>Change Language</span>",
+     "opt_englisch": "English",
+     "opt_deutsch": "Deutsch"
+  }

@@ -1,36 +1,18 @@
 
- @media (min-width:768px) {
 #loginform_body{
-    margin: 5% auto 0 25%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
 
     .card{
         margin: 5%;
+        width: 25rem;
     }
 }
  
-}
 
-@media (max-width:768px){
-
-    #loginform_body{
-        margin: 5% auto 0 10%;
-    
-        .card{
-            margin: 3%;
-        }
+#rmm_languageform{
+    select{
+    width:100%;
     }
-
-}
-
-
-@media (max-width: 450px){
-
-    #loginform_body{
-        margin: 5% auto 0 2%;
-    
-        .card{
-            margin: 1%;
-        }
-    }
-
 }
