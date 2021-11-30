@@ -180,4 +180,9 @@ h6 {
 #rmm_languageform select {
   width: 100%;
 }
+
+.btn {
+  float: right;
+  margin: 5px;
+}
 /*# sourceMappingURL=style.css.map */
