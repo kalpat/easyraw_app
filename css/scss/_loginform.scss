@@ -1,5 +1,5 @@
 
-#loginform_body{
+#loginform_body, #easyraw_registerform_div{
     display: grid;
     justify-content: center;
     align-items: center;
@@ -7,6 +7,10 @@
     .card{
         margin: 5%;
         width: 25rem;
+    }
+
+    .card-content{
+        padding: 10px;
     }
 }
  

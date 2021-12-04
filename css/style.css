@@ -161,7 +161,7 @@ h6 {
   width: 96%;
 }
 
-#loginform_body {
+#loginform_body, #easyraw_registerform_div {
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
@@ -172,9 +172,13 @@ h6 {
           align-items: center;
 }
 
-#loginform_body .card {
+#loginform_body .card, #easyraw_registerform_div .card {
   margin: 5%;
   width: 25rem;
+}
+
+#loginform_body .card-content, #easyraw_registerform_div .card-content {
+  padding: 10px;
 }
 
 #rmm_languageform select {
