@@ -1,0 +1,10 @@
+{
+    "registerFormLabel": "Create Account",
+    "usermail": "Email",
+    "password": "Password",
+    "password_confirm": "Password confirm",
+    "create_account": "Create Account",
+    "cancel_creation": "Cancel",
+    "password_notconfirmed": "Password not confirmed.",
+    "password_confirmed": "Password confirmed."
+  }
