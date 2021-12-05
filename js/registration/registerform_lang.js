@@ -18,5 +18,34 @@ function registerform_lang(lang){
   }
 
   var lang = localStorage.getItem("lang");
-  console.log('Registerform Lang läuft eigentlich');
-    registerform_lang(lang);
+  registerform_lang(lang);
+
+  $( '#cancel_button' ).click(function() {
+    $("#App_Content").load("templates/loginform.html");
+    //Loginform Sprache laden
+    $.getScript("./js/login/change_language.js");
+  //Registrierungsformular einfügen it Klick "Account erstellen!"
+  $.getScript("./js/registration/registration_form.js");
+  });
+
+  $('#usermail').keyup(function() {
+    $.getJSON('./config/communication.json', function(apidata) {
+      var lang = localStorage.getItem("lang");
+        var geturl = apidata.api_url + "chk_registrationmail";
+        var get_usermail = $('#usermail').val();
+  
+        $.ajax({
+          url: geturl,
+          data: {lang: lang, usermail: get_usermail }
+        })
+  .done(function(response){
+    if (response=="Ok") {
+      $('#userpassword').removeAttr('disabled');
+      $("#wrong_emailadress").remove();
+    }else{
+      $('#email_msg').html(response);
+      $('#userpassword').attr('disabled', 'disabled');
+    }
+  }); 
+    });
+  });
