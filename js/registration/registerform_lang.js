@@ -1,7 +1,6 @@
 function registerform_lang(lang){
 
     $.getJSON('lang/' + lang + '/registrationform.json', function(registerform) {
-        console.log(registerform);
   //Label - Registrierungsformular - card header
       $("#registerform_header").html(registerform.registerFormLabel)
       //Label Input-Field Usermail
@@ -24,12 +23,13 @@ function registerform_lang(lang){
     $("#App_Content").load("templates/loginform.html");
     //Loginform Sprache laden
     $.getScript("./js/login/change_language.js");
-  //Registrierungsformular einfügen it Klick "Account erstellen!"
+  //Registrierungsformular einfügen mit Klick "Account erstellen!"
   $.getScript("./js/registration/registration_form.js");
   });
 
   $('#usermail').keyup(function() {
     $.getJSON('./config/communication.json', function(apidata) {
+      console.log(apidata);
       var lang = localStorage.getItem("lang");
         var geturl = apidata.api_url + "chk_registrationmail";
         var get_usermail = $('#usermail').val();
@@ -39,6 +39,9 @@ function registerform_lang(lang){
           data: {lang: lang, usermail: get_usermail }
         })
   .done(function(response){
+
+    console.log(response);
+
     if (response=="Ok") {
       $('#userpassword').removeAttr('disabled');
       $("#wrong_emailadress").remove();
