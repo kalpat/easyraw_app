@@ -1,5 +1,7 @@
 function change_language(lang){
   $.getJSON('lang/' + lang + '/loginform.json', function(loginform) {
+  //Set Page-Language
+    $("html").attr("lang", lang);
     //Email-Msg-Feld unsichtbar machen
     $("#email_msg").hide();
     //Password-Msg-Feld unsichtbar machen

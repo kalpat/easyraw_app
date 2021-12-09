@@ -10,7 +10,6 @@ $("html").attr("lang", lang);
   $(document).ready(function(){
   //Login-Form Methoden - Einfügen und AJAX
 $.getScript("./js/login/login_form.js");
-
   });
 
 
