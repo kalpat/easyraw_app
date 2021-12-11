@@ -18,6 +18,8 @@ $( '#cancel_button' ).click(function() {
           data: {lang: lang, usermail: usermail }
         })
   .done(function(response){
+
+    console.log(response);
   var responseResult = $.parseJSON(response);
 
     if (responseResult.result=="Ok") {
