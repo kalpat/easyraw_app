@@ -1,5 +1,13 @@
 {
     "registerFormLabel": "Account erstellen",
+    "L_accounttype": "Accounttyp",
+    "acctype_select": "Accounttype wählen!",
+    "acctype_company": "Firma",
+    "acctype_privat": "Privat",
+    "L_Name": "Name",
+    "L_acc_address": "Adresse",
+    "L_acc_zip": "PLZ",
+    "L_acc_city": "Ort",
     "usermail": "Email",
     "password": "Passwort",
     "password_confirm": "Passwort bestätigten",

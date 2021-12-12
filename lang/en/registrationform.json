@@ -1,10 +1,18 @@
 {
-    "registerFormLabel": "Create Account",
-    "usermail": "Email",
-    "password": "Password",
-    "password_confirm": "Password confirm",
-    "create_account": "Create Account",
-    "cancel_creation": "Cancel",
-    "password_notconfirmed": "Password not confirmed.",
-    "password_confirmed": "Password confirmed."
-  }
+  "registerFormLabel": "Create Account",
+  "L_accounttype": "Account Type",
+  "acctype_select": "Select Account Type!",
+  "acctype_company": "Company",
+  "acctype_privat": "Privat",
+  "L_Name": "Name",
+  "L_acc_address": "Address",
+  "L_acc_zip": "ZipCode",
+  "L_acc_city": "City",
+  "usermail": "Email",
+  "password": "Password",
+  "password_confirm": "Password confirm",
+  "create_account": "Create Account",
+  "cancel_creation": "Cancel",
+  "password_notconfirmed": "Password not confirmed.",
+  "password_confirmed": "Password confirmed."
+}
