@@ -19,6 +19,8 @@ function registerform_lang(lang){
       $("#L_acc_zip").html(registerform.L_acc_zip)
       //Label Input-Field Ort
       $("#L_acc_city").html(registerform.L_acc_city)
+      //Header Admin-Login
+      $("#h_admin_login").html(registerform.h_admin_login)
       //Label Input-Field Usermail
       $("#L_usermail").html(registerform.usermail)
       //Label Input-Field - Password

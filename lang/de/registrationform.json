@@ -8,6 +8,7 @@
     "L_acc_address": "Adresse",
     "L_acc_zip": "PLZ",
     "L_acc_city": "Ort",
+    "h_admin_login": "Admin Login",
     "usermail": "Email",
     "password": "Passwort",
     "password_confirm": "Passwort bestätigten",
