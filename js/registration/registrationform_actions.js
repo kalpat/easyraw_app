@@ -88,6 +88,45 @@ $("#usermail").attr("disabled", "disabled");
  $("#userpassword").attr("disabled", "disabled");
  //Input-Field Passwort Confirmation
  $("#userpassword_confirm").attr("disabled", "disabled");
+  }else{
+
+    var acc_address_str = $("#acc_address").val();
+    if (acc_address_str == "") {
+  //Input-Field PLZ sperren
+$("#acc_zip").attr("disabled", "disabled");
+//Input-Field Ort sperren
+$("#acc_city").attr("disabled", "disabled");
+//Input-Field Usermail sperren
+$("#usermail").attr("disabled", "disabled"); 
+ //Input-Field Passwort
+ $("#userpassword").attr("disabled", "disabled");
+ //Input-Field Passwort Confirmation
+ $("#userpassword_confirm").attr("disabled", "disabled");
+    }else {
+
+      var acc_zip_str = $("#acc_zip").val();
+
+      if (acc_zip_str == "") {
+        //Input-Field Ort sperren
+$("#acc_city").attr("disabled", "disabled");
+//Input-Field Usermail sperren
+$("#usermail").attr("disabled", "disabled"); 
+ //Input-Field Passwort
+ $("#userpassword").attr("disabled", "disabled");
+ //Input-Field Passwort Confirmation
+ $("#userpassword_confirm").attr("disabled", "disabled");
+      } else {
+        var acc_city_str = $("#acc_city").val();
+        if (acc_city_str == "") {
+          //Input-Field Usermail sperren
+$("#usermail").attr("disabled", "disabled"); 
+//Input-Field Passwort
+$("#userpassword").attr("disabled", "disabled");
+//Input-Field Passwort Confirmation
+$("#userpassword_confirm").attr("disabled", "disabled");
+        } 
+      }
+    }
   }
 });
 
