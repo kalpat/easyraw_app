@@ -161,7 +161,7 @@ h6 {
   width: 96%;
 }
 
-#loginform_body, #easyraw_registerform_div {
+#loginform_body, #easyraw_registrationform_div {
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
@@ -172,12 +172,12 @@ h6 {
           align-items: center;
 }
 
-#loginform_body .card, #easyraw_registerform_div .card {
+#loginform_body .card, #easyraw_registrationform_div .card {
   margin: 5%;
   width: 25rem;
 }
 
-#loginform_body .card-content, #easyraw_registerform_div .card-content {
+#loginform_body .card-content, #easyraw_registrationform_div .card-content {
   padding: 10px;
 }
 
@@ -190,7 +190,19 @@ h6 {
   margin: 5px;
 }
 
-#easyraw_registerform_div .card-footer {
+#easyraw_registrationform_div .card-footer {
   min-height: 65px;
+}
+
+#email_msg {
+  display: none;
+}
+
+#password_msg {
+  display: none;
+}
+
+#passwordconfirm_msg {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

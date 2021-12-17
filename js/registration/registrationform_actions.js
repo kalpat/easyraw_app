@@ -142,17 +142,112 @@ $("#userpassword_confirm").attr("disabled", "disabled");
           data: {lang: lang, usermail: usermail }
         })
   .done(function(response){
-
     console.log(response);
-  var responseResult = $.parseJSON(response);
+    var responseResult = $.parseJSON(response);
 
     if (responseResult.result=="Ok") {
       $('#userpassword').removeAttr('disabled');
-      $("#wrong_emailadress").remove();
+      $("#email_msg").hide();
     }else{
       $('#email_msg').html(responseResult.errormsg);
+      $('#email_msg').show();
       $('#userpassword').attr('disabled', 'disabled');
     }
   }); 
     });
   });
+
+  //Eingabe Password - erstes Feld 
+  $('#userpassword').keyup(function(){
+    $.getJSON('./config/communication.json', function(apidata) {
+      var geturl = apidata.api_url + "passwordsecuretylevel";
+      var get_userpassword = $('#userpassword').val();
+    
+  $.ajax({
+    url: geturl,
+    data: {password: get_userpassword}
+  })
+  .done(function(response){
+   console.log(response);
+ var passwordlevel = $.parseJSON(response);
+
+  var get_percent = parseInt(passwordlevel.passw_securelevel)*100/50;
+  if (get_percent<30) {
+    $('#password_msg').html('<div class="progress">\n' +
+    '<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width:'+get_percent+'%"></div></div>');
+    $('#password_msg').show();
+    $('#userpassword_confirm').attr('disabled', 'disabled');
+  }else{
+    if (get_percent<60) {
+      $('#password_msg').html('<div class="progress">\n' +
+      '<div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width:'+get_percent+'%"></div></div>');
+      $('#password_msg').show();
+      $('#userpassword_confirm').attr('disabled', 'disabled');
+    }else{
+      if (get_percent>60) {
+        $('#password_msg').html('<div class="progress">\n' +
+        '<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width:'+get_percent+'%"></div></div>');
+        $('#password_msg').show();
+        $('#userpassword_confirm').removeAttr('disabled');
+    }
+  }
+  }
+   
+  });
+    });
+  });
+
+  //Eingabe - Password-Confirmation
+  $('#userpassword_confirm').keyup(function(){
+    var lang = localStorage.getItem("lang");
+    $.getJSON('lang/'+lang+'/registrationform.json', function(msgdata){
+      var msg_notconfirm = msgdata.password_notconfirmed;
+      var msg_confirm = msgdata.password_confirmed;
+  var get_password = $('#userpassword').val();
+  var get_passwordconfirm = $('#userpassword_confirm').val();
+
+  console.log("Eingabe Passwordconf.: " + get_passwordconfirm);
+  
+  if (get_password == get_passwordconfirm) {
+    $('#create_button').prop('disabled', false);
+    $('#passwordconfirm_msg').html('<div id="wrong_emailadress" class="alert alert-success">'+msg_confirm+'</div>');
+    $('#passwordconfirm_msg').show();
+  }else{
+    $('#create_button').prop('disabled', true);
+    $('#passwordconfirm_msg').html('<div id="wrong_emailadress" class="alert alert-danger">'+msg_notconfirm+'</div>');
+    $('#passwordconfirm_msg').show();
+  }
+  });
+  });
+
+//
+  $('#rmm_registrationform').submit(function(eventHandl){
+    var new_usermail = $('#usermail').val();
+    var new_password = $('#userpassword').val();
+    var new_password_confirm = $('#userpassword_confirm').val();
+    
+    $.getJSON('easyraw_config.json', function(apidata) {
+    
+    $.getScript('js/inc_getDateTime.js')
+    .done(function(){
+      var geturl = apidata.api_url + "create_new_account.php";
+      var get_currentDatetime = get_newDatetime();
+      
+    $.ajax({
+      url: geturl,
+      data: {client_datetime: get_currentDatetime,
+        usermail: new_usermail, 
+        password: new_password, 
+        password_confirm: new_password_confirm}
+    })
+    
+    .done(function(response){
+    $('#App_Content').html(response);
+    
+    });
+    });
+    
+    });
+    eventHandl.preventDefault();
+    });
+  

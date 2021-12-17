@@ -1,5 +1,5 @@
 
-#loginform_body, #easyraw_registerform_div{
+#loginform_body, #easyraw_registrationform_div{
     display: grid;
     justify-content: center;
     align-items: center;
@@ -27,9 +27,21 @@
     }
 
 
-#easyraw_registerform_div{
+#easyraw_registrationform_div{
     
 .card-footer{
     min-height: 65px;
 }
+}
+
+#email_msg{
+    display: none;
+}
+
+#password_msg {
+    display: none;
+}
+
+#passwordconfirm_msg{
+    display: none;
 }
