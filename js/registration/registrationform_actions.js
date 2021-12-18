@@ -222,13 +222,20 @@ $("#userpassword_confirm").attr("disabled", "disabled");
 
 //
   $('#rmm_registrationform').submit(function(eventHandl){
-    var new_usermail = $('#usermail').val();
-    var new_password = $('#userpassword').val();
-    var new_password_confirm = $('#userpassword_confirm').val();
+
+    var registrationinformation = {}
+  registrationinformation.accounttype = $('#accounttyp_selection').val();
+  registrationinformation.accountname = $('#acc_name').val();
+  registrationinformation.accountaddress = $('#acc_address').val();
+  registrationinformation.accoutzip = $('#acc_zip').val();
+  registrationinformation.accountcity = $('#acc_city').val();
+  registrationinformation.accountadminusermail = $('#usermail').val();
+  registrationinformation.accountadminpassword = $('#userpassword').val();
+  registrationinformation.accountadminpassordconfirm = $('#userpassword_confirm').val();
     
-    $.getJSON('easyraw_config.json', function(apidata) {
+  $.getJSON('./config/communication.json', function(apidata) {
     
-    $.getScript('js/inc_getDateTime.js')
+    $.getScript('./js/datetime/inc_getDateTime.js')
     .done(function(){
       var geturl = apidata.api_url + "create_new_account.php";
       var get_currentDatetime = get_newDatetime();
