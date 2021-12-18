@@ -141,15 +141,15 @@ $("#userpassword_confirm").attr("disabled", "disabled");
           url: ajaxurl,
           data: {lang: lang, usermail: usermail }
         })
-  .done(function(response){
-    console.log(response);
-    var responseResult = $.parseJSON(response);
+  .done(function(response_JSON){
+    console.log(response_JSON);
+    var response_Array = $.parseJSON(response_JSON);
 
-    if (responseResult.result=="Ok") {
+    if (response_Array.result=="Ok") {
       $('#userpassword').removeAttr('disabled');
       $("#email_msg").hide();
     }else{
-      $('#email_msg').html(responseResult.errormsg);
+      $('#email_msg').html(response_Array.errormsg);
       $('#email_msg').show();
       $('#userpassword').attr('disabled', 'disabled');
     }
@@ -160,33 +160,33 @@ $("#userpassword_confirm").attr("disabled", "disabled");
   //Eingabe Password - erstes Feld 
   $('#userpassword').keyup(function(){
     $.getJSON('./config/communication.json', function(apidata) {
-      var geturl = apidata.api_url + "passwordsecuretylevel";
-      var get_userpassword = $('#userpassword').val();
+      var apiurl = apidata.api_url + "passwordsecuretylevel";
+      var userpassword = $('#userpassword').val();
     
   $.ajax({
-    url: geturl,
-    data: {password: get_userpassword}
+    url: apiurl,
+    data: {password: userpassword}
   })
-  .done(function(response){
-   console.log(response);
- var passwordlevel = $.parseJSON(response);
+  .done(function(response_JSON){
+   console.log(response_JSON);
+ var passwordlevel = $.parseJSON(response_JSON);
 
-  var get_percent = parseInt(passwordlevel.passw_securelevel)*100/50;
-  if (get_percent<30) {
+  var passwordlevel_percent = parseInt(passwordlevel.passw_securelevel)*100/50;
+  if (passwordlevel_percent<30) {
     $('#password_msg').html('<div class="progress">\n' +
-    '<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width:'+get_percent+'%"></div></div>');
+    '<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width:'+passwordlevel_percent+'%"></div></div>');
     $('#password_msg').show();
     $('#userpassword_confirm').attr('disabled', 'disabled');
   }else{
-    if (get_percent<60) {
+    if (passwordlevel_percent<60) {
       $('#password_msg').html('<div class="progress">\n' +
-      '<div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width:'+get_percent+'%"></div></div>');
+      '<div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width:'+passwordlevel_percent+'%"></div></div>');
       $('#password_msg').show();
       $('#userpassword_confirm').attr('disabled', 'disabled');
     }else{
-      if (get_percent>60) {
+      if (passwordlevel_percent>60) {
         $('#password_msg').html('<div class="progress">\n' +
-        '<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width:'+get_percent+'%"></div></div>');
+        '<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width:'+passwordlevel_percent+'%"></div></div>');
         $('#password_msg').show();
         $('#userpassword_confirm').removeAttr('disabled');
     }
@@ -203,12 +203,12 @@ $("#userpassword_confirm").attr("disabled", "disabled");
     $.getJSON('lang/'+lang+'/registrationform.json', function(msgdata){
       var msg_notconfirm = msgdata.password_notconfirmed;
       var msg_confirm = msgdata.password_confirmed;
-  var get_password = $('#userpassword').val();
-  var get_passwordconfirm = $('#userpassword_confirm').val();
+  var userpassword = $('#userpassword').val();
+  var passwordconfirm = $('#userpassword_confirm').val();
 
-  console.log("Eingabe Passwordconf.: " + get_passwordconfirm);
+  console.log("Eingabe Passwordconf.: " + passwordconfirm);
   
-  if (get_password == get_passwordconfirm) {
+  if (userpassword == passwordconfirm) {
     $('#create_button').prop('disabled', false);
     $('#passwordconfirm_msg').html('<div id="wrong_emailadress" class="alert alert-success">'+msg_confirm+'</div>');
     $('#passwordconfirm_msg').show();
@@ -222,8 +222,16 @@ $("#userpassword_confirm").attr("disabled", "disabled");
 
 //
   $('#rmm_registrationform').submit(function(eventHandl){
+    eventHandl.preventDefault();
+  $.getJSON('./config/communication.json', function(apidata) {
+    
+    $.getScript('./js/datetime/inc_getDateTime.js')
+    .done(function(){
+      var apiurl = apidata.api_url + "createnewaccount";
+      var currentDatetime = get_newDatetime();
 
-    var registrationinformation = {}
+      var registrationinformation = {}
+  registrationinformation.datetime = currentDatetime;
   registrationinformation.accounttype = $('#accounttyp_selection').val();
   registrationinformation.accountname = $('#acc_name').val();
   registrationinformation.accountaddress = $('#acc_address').val();
@@ -232,29 +240,26 @@ $("#userpassword_confirm").attr("disabled", "disabled");
   registrationinformation.accountadminusermail = $('#usermail').val();
   registrationinformation.accountadminpassword = $('#userpassword').val();
   registrationinformation.accountadminpassordconfirm = $('#userpassword_confirm').val();
-    
-  $.getJSON('./config/communication.json', function(apidata) {
-    
-    $.getScript('./js/datetime/inc_getDateTime.js')
-    .done(function(){
-      var geturl = apidata.api_url + "create_new_account.php";
-      var get_currentDatetime = get_newDatetime();
-      
+  
+  console.log(apiurl);
+
     $.ajax({
-      url: geturl,
-      data: {client_datetime: get_currentDatetime,
-        usermail: new_usermail, 
-        password: new_password, 
-        password_confirm: new_password_confirm}
-    })
-    
-    .done(function(response){
-    $('#App_Content').html(response);
+      type: 'POST',
+      url: apiurl,
+      contentType: 'application/json; charset=utf-8',
+      dataType: 'json',
+      data: JSON.stringify(registrationinformation),
+      success: function(response_JSON){
+        if (response_JSON.success == true) {
+          console.log(response_JSON);
+          $('#App_Content').html(response_JSON);
+        } else {
+          
+        }
+      }
+    });
     
     });
     });
-    
-    });
-    eventHandl.preventDefault();
     });
   
