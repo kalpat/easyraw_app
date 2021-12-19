@@ -230,34 +230,29 @@ $("#userpassword_confirm").attr("disabled", "disabled");
       var apiurl = apidata.api_url + "createnewaccount";
       var currentDatetime = get_newDatetime();
 
-      var registrationinformation = {}
+      var registrationinformation = {};
+  registrationinformation.api_key = apidata.api_key;
+  registrationinformation.api_secret = apidata.api_secret;
+  registrationinformation.lang = lang;
   registrationinformation.datetime = currentDatetime;
-  registrationinformation.accounttype = $('#accounttyp_selection').val();
-  registrationinformation.accountname = $('#acc_name').val();
-  registrationinformation.accountaddress = $('#acc_address').val();
-  registrationinformation.accoutzip = $('#acc_zip').val();
-  registrationinformation.accountcity = $('#acc_city').val();
-  registrationinformation.accountadminusermail = $('#usermail').val();
-  registrationinformation.accountadminpassword = $('#userpassword').val();
-  registrationinformation.accountadminpassordconfirm = $('#userpassword_confirm').val();
-  
-  console.log(apiurl);
+  registrationinformation.type = $('#accounttyp_selection').val();
+  registrationinformation.name = $('#acc_name').val();
+  registrationinformation.address = $('#acc_address').val();
+  registrationinformation.zip = $('#acc_zip').val();
+  registrationinformation.city = $('#acc_city').val();
+  registrationinformation.usermail = $('#usermail').val();
+  registrationinformation.password = $('#userpassword').val();
+  registrationinformation.passordconfirm = $('#userpassword_confirm').val();
 
-    $.ajax({
-      type: 'POST',
-      url: apiurl,
-      contentType: 'application/json; charset=utf-8',
-      dataType: 'json',
-      data: JSON.stringify(registrationinformation),
-      success: function(response_JSON){
-        if (response_JSON.success == true) {
-          console.log(response_JSON);
-          $('#App_Content').html(response_JSON);
-        } else {
-          
-        }
-      }
-    });
+  $.ajax({
+    url: apiurl,
+    method:'post',
+    data: {newaccount: registrationinformation},
+  })
+  .done(function(response_JSON){
+    console.log(response_JSON);
+//$('#App_Content').html(response_JSON);
+ });
     
     });
     });
