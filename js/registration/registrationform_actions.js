@@ -139,12 +139,13 @@ $("#userpassword_confirm").attr("disabled", "disabled");
         var usermail = $('#usermail').val();
         $.ajax({
           url: ajaxurl,
+          method: 'post',
           data: {lang: lang, usermail: usermail }
         })
   .done(function(response_JSON){
     console.log(response_JSON);
-    var response_Array = $.parseJSON(response_JSON);
-
+    //var response_Array = $.parseJSON(response_JSON);
+/*
     if (response_Array.result=="Ok") {
       $('#userpassword').removeAttr('disabled');
       $("#email_msg").hide();
@@ -153,6 +154,7 @@ $("#userpassword_confirm").attr("disabled", "disabled");
       $('#email_msg').show();
       $('#userpassword').attr('disabled', 'disabled');
     }
+    */
   }); 
     });
   });
