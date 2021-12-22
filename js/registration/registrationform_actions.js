@@ -133,7 +133,6 @@ $("#userpassword_confirm").attr("disabled", "disabled");
   //Eingabe in Usermail wird Serverseitig geprüft und man erhält eine entsprechende Message
   $('#usermail').keyup(function() {
     $.getJSON('./config/communication.json', function(apidata) {
-      console.log(apidata);
       var lang = localStorage.getItem("lang");
         var ajaxurl = apidata.api_url + "registrationmailcheck";
         var usermail = $('#usermail').val();
@@ -144,8 +143,8 @@ $("#userpassword_confirm").attr("disabled", "disabled");
         })
   .done(function(response_JSON){
     console.log(response_JSON);
-    //var response_Array = $.parseJSON(response_JSON);
-/*
+    var response_Array = $.parseJSON(response_JSON);
+
     if (response_Array.result=="Ok") {
       $('#userpassword').removeAttr('disabled');
       $("#email_msg").hide();
@@ -154,7 +153,7 @@ $("#userpassword_confirm").attr("disabled", "disabled");
       $('#email_msg').show();
       $('#userpassword').attr('disabled', 'disabled');
     }
-    */
+    
   }); 
     });
   });
@@ -167,10 +166,11 @@ $("#userpassword_confirm").attr("disabled", "disabled");
     
   $.ajax({
     url: apiurl,
+    method: 'post',
     data: {password: userpassword}
   })
   .done(function(response_JSON){
-   console.log(response_JSON);
+  console.log(response_JSON);
  var passwordlevel = $.parseJSON(response_JSON);
 
   var passwordlevel_percent = parseInt(passwordlevel.passw_securelevel)*100/50;
@@ -222,7 +222,7 @@ $("#userpassword_confirm").attr("disabled", "disabled");
   });
   });
 
-//
+//Registrierformular wird versendet
   $('#rmm_registrationform').submit(function(eventHandl){
     eventHandl.preventDefault();
   $.getJSON('./config/communication.json', function(apidata) {
