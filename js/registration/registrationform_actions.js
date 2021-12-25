@@ -244,7 +244,7 @@ $("#userpassword_confirm").attr("disabled", "disabled");
   registrationinformation.city = $('#acc_city').val();
   registrationinformation.usermail = $('#usermail').val();
   registrationinformation.password = $('#userpassword').val();
-  registrationinformation.passordconfirm = $('#userpassword_confirm').val();
+  registrationinformation.passwordconfirm = $('#userpassword_confirm').val();
 
   $.ajax({
     url: apiurl,
